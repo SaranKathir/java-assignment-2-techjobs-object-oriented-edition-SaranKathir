@@ -1,6 +1,5 @@
 package org.launchcode.techjobs.oo;
 
-import javax.swing.text.html.HTMLDocument;
 import java.util.Objects;
 
 public class Job {
@@ -91,5 +90,32 @@ public class Job {
 
     public int getId() {
         return id;
+    }
+    @Override
+    public String toString(){
+        String noData = "Data not available";
+        /*  if(name == null && name == "") //  || employer == null && employer =="" || location == null && location =="" || positionType == null && positionType =="" || coreCompetency == null && coreCompetency =="")
+        {
+            // return "\n" + "Name:" + (noData); + "\n" + "Employer:" + noData +"\n" + "Location:" + noData +"\n" + "PositionType:"+ noData +"\n" +"Core Competency:" + noData +"\n";
+        }*/
+        if(name == null || name == "")
+        {
+         name=noData;
+        }
+        if(employer.getValue() == null || employer.getValue() ==""){
+            employer.setValue(noData);
+        }
+        if(location.getValue() == null || location.getValue() =="" ){
+            location.setValue(noData);
+        }
+        if(positionType.getValue() == null || positionType.getValue() ==""){
+            positionType.setValue(noData);
+        }
+        if(coreCompetency.getValue() == null || coreCompetency.getValue() ==""){
+            coreCompetency.setValue(noData);
+        }
+       return "\n" + "ID:"+ id +"\n" + "Name:" + name + "\n" + "Employer:" + employer +"\n" + "Location:" + location +"\n" + "PositionType:"+ positionType +"\n" +"CoreCompetency:" + coreCompetency +"\n";
+
+
     }
 }

@@ -52,5 +52,31 @@ public class JobTest {
    // System.out.println(testjob1);
    // System.out.println(testjob2);
 }
+@Test
+public void  testToStringStartsAndEndsWithNewLine(){
+    Job testjob = new Job("Product tester", new Employer("ACME"), new Location("Desert"), new PositionType("Quality control"), new CoreCompetency("Persistence"));
+   // System.out.println(testjob.toString());
+    //System.out.println(testjob.toString().charAt(112));
+   // assertEquals('N',testjob.toString().charAt(6));
+    assertEquals('\n',testjob.toString().charAt(0));
+    assertEquals('\n',testjob.toString().charAt(112));
+    //assertEquals('\n',testjob.toString().charAt());
+}
+@Test
+    public void testToStringContainsCorrectLabelsAndData(){
+    Job testjob = new Job("Product tester", new Employer("ACME"), new Location("Desert"), new PositionType("Quality control"), new CoreCompetency("Persistence"));
+    //System.out.println(testjob.toString().contains("Desert"));
+    String output = "\n" + "ID:" + testjob.getId() + "\n" + "Name:"+testjob.getName() + "\n" + "Employer:" + testjob.getEmployer() + "\n" + "Location:" + testjob.getLocation() +"\n" + "PositionType:" +testjob.getPositionType() + "\n" + "CoreCompetency:" + testjob.getCoreCompetency() + "\n";
+    assertEquals(output,testjob.toString());
 
+}
+@Test
+    public void testToStringHandlesEmptyField(){
+
+    Job testjob = new Job("",new Employer(), new Location(), new PositionType(), new CoreCompetency());
+    String output = "\n" + "ID:" + testjob.getId() + "\n" + "Name:Data not available" + "\n" + "Employer:Data not available"+ "\n" + "Location:Data not available" +"\n"
+            + "PositionType:Data not available" + "\n" + "CoreCompetency:Data not available" + "\n";
+    System.out.println(output);
+    assertEquals(output,testjob.toString());
+}
 }
