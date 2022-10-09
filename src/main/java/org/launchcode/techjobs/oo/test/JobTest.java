@@ -56,11 +56,12 @@ public class JobTest {
 public void  testToStringStartsAndEndsWithNewLine(){
     Job testjob = new Job("Product tester", new Employer("ACME"), new Location("Desert"), new PositionType("Quality control"), new CoreCompetency("Persistence"));
    // System.out.println(testjob.toString());
-    //System.out.println(testjob.toString().charAt(112));
+   // System.out.println(testjob.toString().charAt(112));
    // assertEquals('N',testjob.toString().charAt(6));
+    int lastIndex = testjob.toString().length()-1;
     assertEquals('\n',testjob.toString().charAt(0));
-    assertEquals('\n',testjob.toString().charAt(112));
-    //assertEquals('\n',testjob.toString().charAt());
+    assertEquals('\n',testjob.toString().charAt(lastIndex));
+
 }
 @Test
     public void testToStringContainsCorrectLabelsAndData(){
