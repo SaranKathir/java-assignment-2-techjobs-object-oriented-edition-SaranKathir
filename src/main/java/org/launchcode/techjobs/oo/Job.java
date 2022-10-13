@@ -94,6 +94,7 @@ public class Job {
     @Override
     public String toString(){
         String noData = "Data not available";
+        // If a Job object ONLY contains data for the id field, the method should return, “OOPS! This job does not seem to exist
         /*  if(name == null && name == "") //  || employer == null && employer =="" || location == null && location =="" || positionType == null && positionType =="" || coreCompetency == null && coreCompetency =="")
         {
             // return "\n" + "Name:" + (noData); + "\n" + "Employer:" + noData +"\n" + "Location:" + noData +"\n" + "PositionType:"+ noData +"\n" +"Core Competency:" + noData +"\n";
@@ -114,8 +115,12 @@ public class Job {
         if(coreCompetency.getValue() == null || coreCompetency.getValue() ==""){
             coreCompetency.setValue(noData);
         }
-       return "\n" + "ID:"+ id +"\n" + "Name:" + name + "\n" + "Employer:" + employer +"\n" + "Location:" + location +"\n" + "PositionType:"+ positionType +"\n" +"CoreCompetency:" + coreCompetency +"\n";
+
+
+       return "\n" + "ID: "+ id +"\n" + "Name: " + name + "\n" + "Employer: " + employer +"\n" + "Location: " + location +"\n" + "Position Type: "+ positionType +"\n" +"Core Competency: " + coreCompetency +"\n";
 
 
     }
+
+
 }
